@@ -51,7 +51,11 @@ GOP also ensures that the target system treats quoted text, files, retrieved mat
 
 ## Example
 
-See [High-school inequality tutor](examples/high-school-inequality-tutor.md) for a real input, the complete system prompt, and the immediate first response.
+Each example includes the original requirement, the full GOP-generated system prompt, and its immediate execution result:
+
+- [High-school inequality tutor](examples/high-school-inequality-tutor.md)
+- [Meeting notes → weekly update](examples/meeting-notes-weekly-update.md)
+- [Grounded research brief](examples/grounded-research-brief.md)
 
 ## Research foundations
 
