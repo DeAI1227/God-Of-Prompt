@@ -1,4 +1,4 @@
 interface:
   display_name: "GOP"
-  short_description: "將需求直接轉成可複製的專家級系統提示詞"
-  default_prompt: "Use $gop to convert this requirement into one copy-ready system prompt only: "
+  short_description: "生成完整系統提示詞後立即依它執行"
+  default_prompt: "Use $gop to create a system prompt and immediately execute it for this requirement: "

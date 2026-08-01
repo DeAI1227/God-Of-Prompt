@@ -4,9 +4,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-f5de53.svg)](LICENSE)
 [![Research Grounded](https://img.shields.io/badge/Research-Grounded-6f42c1.svg)](#research-foundations)
 
-**Turn a rough requirement into one copy-ready system prompt—without the ceremony.**
+**Turn a rough requirement into a visible, copy-ready system prompt—then execute it immediately.**
 
-God Of Prompt (GOP) is an installable Codex Skill for people who want a reliable system prompt, not a prompt-engineering report. Give it a product idea, workflow, agent, chatbot, or business requirement; it returns exactly one system prompt and nothing else.
+God Of Prompt (GOP) is an installable Codex Skill for people who want a reliable system prompt, not a prompt-engineering report. Give it a product idea, workflow, agent, chatbot, or business requirement; it shows the complete system prompt, then applies it in the same response without waiting for approval.
 
 [繁體中文](README.zh-TW.md) · [Quick start](#quick-start) · [Example](examples/high-school-inequality-tutor.md) · [Research](#research-foundations)
 
@@ -17,7 +17,7 @@ Most prompt generators compensate for ambiguity with more text: roles, multi-age
 - Start with a minimal, contextual prompt.
 - Add examples, retrieval, decomposition, or refinement only when the requirement justifies them.
 - Define data boundaries, unknown-information behavior, instruction hierarchy, and output format.
-- Produce only the prompt you came for.
+- Make the full prompt visible, then execute it immediately.
 
 ## Quick start
 
@@ -25,7 +25,7 @@ Most prompt generators compensate for ambiguity with more text: roles, multi-age
 $gop Build an assistant that turns meeting notes into a concise weekly project update for a product team.
 ```
 
-GOP responds with one copy-ready system prompt. No title, markdown fence, explanation, evaluation checklist, or citations are added around it.
+GOP responds in two sections: the complete copy-ready system prompt, followed immediately by its execution result. It never waits for a prompt-approval turn.
 
 ## Install
 
@@ -51,7 +51,7 @@ GOP also ensures that the target system treats quoted text, files, retrieved mat
 
 ## Example
 
-See [High-school inequality tutor](examples/high-school-inequality-tutor.md) for a real input and the single system prompt GOP produces.
+See [High-school inequality tutor](examples/high-school-inequality-tutor.md) for a real input, the complete system prompt, and the immediate first response.
 
 ## Research foundations
 
@@ -83,7 +83,7 @@ God-Of-Prompt/
 ## Boundaries
 
 - GOP does not guarantee that a model is correct, secure, unbiased, or more productive.
-- GOP does not expose drafting analysis or prompt-optimization reasoning.
+- GOP shows the generated system prompt but does not expose drafting analysis or hidden reasoning.
 - GOP does not make unauthorized tools, data, or actions safe merely by mentioning them in a prompt.
 - For consequential domains, validate outputs and keep a responsible human in the decision loop.
 

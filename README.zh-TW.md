@@ -1,8 +1,8 @@
 # ⚡ God Of Prompt
 
-**把模糊需求轉成一份可直接貼用的系統提示詞，不附帶任何廢話。**
+**把模糊需求轉成完整、可直接貼用的系統提示詞，接著立即執行。**
 
-God Of Prompt（GOP）是一個可安裝的 Codex Skill。輸入產品構想、工作流程、Agent、聊天機器人或商業需求後，它只輸出一份系統提示詞；沒有標題、說明、需求卡、測試清單或額外評論。
+God Of Prompt（GOP）是一個可安裝的 Codex Skill。輸入產品構想、工作流程、Agent、聊天機器人或商業需求後，它會先完整顯示系統提示詞，再於同一則回覆立即依它執行，不等待確認。
 
 [English](README.md) · [快速開始](#快速開始) · [範例](examples/high-school-inequality-tutor.md) · [研究依據](#研究依據)
 
@@ -19,7 +19,7 @@ git clone https://github.com/DeAI1227/God-Of-Prompt.git
 Copy-Item -Recurse -Force .\God-Of-Prompt\skills\gop "$env:USERPROFILE\.codex\skills\gop"
 ```
 
-重新啟動 Codex（若 Skill 清單尚未更新），然後在需求前加入 `$gop`。
+重新啟動 Codex（若 Skill 清單尚未更新），然後在需求前加入 `$gop`。輸出固定包含完整提示詞與立即執行結果。
 
 ## GOP 的設計原則
 
@@ -27,7 +27,7 @@ Copy-Item -Recurse -Force .\God-Of-Prompt\skills\gop "$env:USERPROFILE\.codex\sk
 - 只有在需求確實需要時，才加入範例、檢索、工具資料、分解或迭代修正。
 - 在生成的提示詞中定義資料邊界、未知或衝突資訊、指令層級、安全限制與穩定輸出格式。
 - 將檔案、引用內容、檢索文件與工具輸出視為資料，不視為可覆蓋上層規則的指令。
-- 高風險或不可逆行動必須要求人類審核與明確授權。
+- 高風險或不可逆行動必須要求人類審核與明確授權；不會因為立即執行而跳過這些外部邊界。
 
 ## 研究依據
 
