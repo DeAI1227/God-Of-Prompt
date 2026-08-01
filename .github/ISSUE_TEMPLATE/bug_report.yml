@@ -1,0 +1,28 @@
+name: Bug report
+description: Report an incorrect, unsafe, or contract-breaking GOP behavior.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: requirement
+    attributes:
+      label: Minimal requirement
+      description: Provide a non-sensitive input that reproduces the behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Safety, quality, or cost impact
