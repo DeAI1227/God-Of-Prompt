@@ -19,7 +19,7 @@ $gop Build an assistant that turns meeting notes into a concise weekly project u
 
 GOP returns exactly two sections: `完整 System Prompt`, then `執行結果`. It never adds a prompt-approval turn.
 
-## Install
+## Install in Codex
 
 ```powershell
 git clone https://github.com/DeAI1227/God-Of-Prompt.git
@@ -27,6 +27,17 @@ Copy-Item -Recurse -Force .\God-Of-Prompt\skills\gop "$env:USERPROFILE\.codex\sk
 ```
 
 Restart Codex if the Skill list does not refresh immediately, then invoke `$gop` followed by the requirement.
+
+## Use the same Skill in Claude Code or Cursor
+
+GOP's core is a portable `SKILL.md` directory with supporting references. Claude Code and Cursor both support Agent Skills built around `SKILL.md`; copy the complete `skills/gop` directory to the skill location for the client you use.
+
+```text
+Claude Code project: .claude/skills/gop/
+Cursor project:      .cursor/skills/gop/
+```
+
+For Claude Code, invoke it as `/gop` or let Claude load it when the request matches its description. For Cursor, invoke or allow the Agent to load the `gop` skill according to your Cursor Skills settings. The optional `agents/openai.yaml` file is Codex metadata; other clients can ignore it.
 
 ## What can I build with this prompt generator?
 

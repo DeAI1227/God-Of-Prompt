@@ -14,7 +14,7 @@ $gop 建立一個把會議記錄轉成產品團隊每週專案更新的助理。
 
 輸出固定只有兩節：`完整 System Prompt`，接著是`執行結果`。不會額外要求你確認提示詞。
 
-## 安裝
+## 安裝到 Codex
 
 ```powershell
 git clone https://github.com/DeAI1227/God-Of-Prompt.git
@@ -22,6 +22,17 @@ Copy-Item -Recurse -Force .\God-Of-Prompt\skills\gop "$env:USERPROFILE\.codex\sk
 ```
 
 重新啟動 Codex（若 Skill 清單尚未更新），然後在需求前加入 `$gop`。
+
+## 在 Claude Code 或 Cursor 使用同一份 Skill
+
+GOP 的核心是可攜式 `SKILL.md` 目錄與參考資料；Claude Code 和 Cursor 都支援以 `SKILL.md` 為主的 Agent Skills。請把完整的 `skills/gop` 目錄複製到所使用客戶端的 Skill 位置：
+
+```text
+Claude Code 專案：.claude/skills/gop/
+Cursor 專案：     .cursor/skills/gop/
+```
+
+Claude Code 可用 `/gop` 直接呼叫，或由 Claude 依描述自動載入；Cursor 則依 Cursor Skills 設定讓 Agent 載入或呼叫 `gop`。選用的 `agents/openai.yaml` 是 Codex 介面中繼資料，其他客戶端可忽略。
 
 ## 這個提示詞產生器能做什麼？
 
