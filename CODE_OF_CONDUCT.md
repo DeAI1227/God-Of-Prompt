@@ -6,14 +6,15 @@ We welcome participation from people of every background and commit to a respect
 
 ## Expected behavior
 
-- Discuss ideas and evidence in good faith.
-- Give actionable, respectful feedback.
+- Discuss ideas, evidence, and trade-offs in good faith.
+- Give actionable, respectful feedback and distinguish evidence from opinion.
 - Protect private, sensitive, and proprietary information.
-- Respect differing experience levels and perspectives.
+- Respect differing experience levels, languages, and perspectives.
+- Describe model behavior and research limits accurately; do not make unsupported performance or safety claims.
 
 ## Unacceptable behavior
 
-Harassment, discrimination, personal attacks, threats, doxxing, or deliberately unsafe instructions are not acceptable.
+Harassment, discrimination, personal attacks, threats, doxxing, deliberate disclosure of sensitive data, or deliberately unsafe instructions are not acceptable.
 
 ## Enforcement
 

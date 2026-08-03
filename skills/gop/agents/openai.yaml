@@ -1,4 +1,4 @@
 interface:
   display_name: "GOP"
-  short_description: "生成完整系統提示詞後立即依它執行"
-  default_prompt: "Use $gop to create a system prompt and immediately execute it for this requirement: "
+  short_description: "把使用者需求生成六段式 XML 系統提示詞並立即執行"
+  default_prompt: "Use $gop to build a six-part XML system prompt and immediately execute it for this requirement: "

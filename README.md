@@ -2,22 +2,14 @@
 
 [![Codex Skill](https://img.shields.io/badge/Codex-Skill-000000?logo=openai&logoColor=white)](https://github.com/openai/codex)
 [![License: MIT](https://img.shields.io/badge/License-MIT-f5de53.svg)](LICENSE)
-[![Research Grounded](https://img.shields.io/badge/Research-Grounded-6f42c1.svg)](#research-foundations)
+[![PDF-led Architecture](https://img.shields.io/badge/Architecture-PDF--led-0a7ea4.svg)](docs/architecture.md)
+[![Research Grounded](https://img.shields.io/badge/Research-Grounded-6f42c1.svg)](#evidence-and-boundaries)
 
-**Turn a rough requirement into a visible, copy-ready system prompt—then execute it immediately.**
+**Turn a rough requirement into a visible, expert-grade XML system prompt—then execute it immediately.**
 
-God Of Prompt (GOP) is an installable Codex Skill for people who want a reliable system prompt, not a prompt-engineering report. Give it a product idea, workflow, agent, chatbot, or business requirement; it shows the complete system prompt, then applies it in the same response without waiting for approval.
+God Of Prompt (GOP) is an installable Codex Skill. It uses a practical six-part system-prompt architecture: **Starter → Context → Task → Examples → Output → Repeat**. GOP shows the complete prompt, then applies it in the same response without waiting for approval.
 
-[繁體中文](README.zh-TW.md) · [Quick start](#quick-start) · [Example](examples/high-school-inequality-tutor.md) · [Research](#research-foundations)
-
-## Why GOP
-
-Most prompt generators compensate for ambiguity with more text: roles, multi-agent theatre, generic chain-of-thought demands, and unearned claims. GOP takes the opposite approach:
-
-- Start with a minimal, contextual prompt.
-- Add examples, retrieval, decomposition, or refinement only when the requirement justifies them.
-- Define data boundaries, unknown-information behavior, instruction hierarchy, and output format.
-- Make the full prompt visible, then execute it immediately.
+[繁體中文](README.zh-TW.md) · [Quick start](#quick-start) · [Architecture](docs/architecture.md) · [Examples](#examples) · [Launch kit](docs/launch-playbook.md)
 
 ## Quick start
 
@@ -25,7 +17,7 @@ Most prompt generators compensate for ambiguity with more text: roles, multi-age
 $gop Build an assistant that turns meeting notes into a concise weekly project update for a product team.
 ```
 
-GOP responds in two sections: the complete copy-ready system prompt, followed immediately by its execution result. It never waits for a prompt-approval turn.
+GOP returns exactly two sections: `完整 System Prompt`, then `執行結果`. It never adds a prompt-approval turn.
 
 ## Install
 
@@ -34,66 +26,61 @@ git clone https://github.com/DeAI1227/God-Of-Prompt.git
 Copy-Item -Recurse -Force .\God-Of-Prompt\skills\gop "$env:USERPROFILE\.codex\skills\gop"
 ```
 
-Restart Codex if the Skill list does not refresh immediately, then invoke `$gop` followed by your requirement.
+Restart Codex if the Skill list does not refresh immediately, then invoke `$gop` followed by the requirement.
 
-## What GOP puts in the prompt
+## The GOP v0.2 prompt architecture
 
-| Requirement signal | Prompt behavior |
+| Section | What it controls |
 |---|---|
-| A precise deliverable | Stable output contract, schema, and an example only when it prevents ambiguity |
-| Facts or external knowledge | Authorized sources, attribution, freshness, conflict, and uncertainty rules |
-| Tool or retrieved content | Treats it as untrusted data, never higher-priority instructions |
-| A difficult multi-step task | Observable checkpoints tied to the requested deliverable—not hidden chain-of-thought requests |
-| Repeated failures | Diagnosis of task, context, evidence, format, safety, or cost; at most three focused revisions |
-| High-stakes or irreversible action | Human review, authorization limits, escalation, and no autonomous irreversible decision |
+| `starter` | A short mission or role that genuinely changes perspective or standards. |
+| `context` | Only the user, facts, inputs, and boundaries that change judgment. |
+| `task` | Executable work, `MUST` / `SHOULD` / `MAY`, acceptance criteria, and failure handling. |
+| `examples` | Representative demonstrations—or an explicit declaration that none are needed. |
+| `output` | Container, fields, order, length, evidence treatment, and missing-data behavior. |
+| `repeat` | One or two critical reminders, not duplicated boilerplate. |
 
-GOP also ensures that the target system treats quoted text, files, retrieved material, and tool output as data. Prompt text is never presented as a substitute for real access control, data isolation, or authorization checks.
+The prompt is XML so its parts are inspectable and stable. It is not verbose for its own sake: GOP starts with the smallest viable six-part baseline and adds a technique only when the task justifies it.
 
-## Example
+## Conditional techniques, not decoration
 
-Each example includes the original requirement, the full GOP-generated system prompt, and its immediate execution result:
+- Use examples only after checking quantity, ordering, label distribution, label quality, format, and similarity.
+- Use concise task rephrasing for material ambiguity; ask one targeted question only when safe completion is blocked.
+- Use task decomposition for genuinely multi-hop work, exposing only requested or output-relevant checkpoints—not hidden chain-of-thought.
+- Use authorized retrieval only with source, freshness, conflict, attribution, and uncertainty rules.
+- For recurring failures, diagnose the failed dimension, make up to three focused revisions, and evaluate against held-out cases.
+
+## Examples
+
+Every example includes the requirement, the full six-part GOP prompt, and the immediate execution result:
 
 - [High-school inequality tutor](examples/high-school-inequality-tutor.md)
 - [Meeting notes → weekly update](examples/meeting-notes-weekly-update.md)
 - [Grounded research brief](examples/grounded-research-brief.md)
 
-## Research foundations
+## Evidence and boundaries
 
-GOP translates the following five sources into operational prompt constraints. They are not used to promise universal productivity, accuracy, or hallucination elimination.
+GOP follows the maintainer-provided workshop framework and uses five papers to strengthen its operational limits: explicit task and context, minimal baselines, controlled technique selection, Promptware lifecycle practices, and evaluation from failed cases. See the full [evidence map](skills/gop/references/evidence-map.md).
 
-1. Anam (2025), [*Prompt Engineering and the Effectiveness of Large Language Models in Enhancing Human Productivity*](https://arxiv.org/pdf/2507.18638) — explicit task, context, constraints, and expected output.
-2. Kusano, Akimoto, and Takeoka (2025), [*Revisiting Prompt Engineering: A Comprehensive Evaluation*](https://arxiv.org/pdf/2507.13525) — compare a minimal baseline with justified additions; account for quality, format, and cost.
-3. Chen et al. (2026), [*Promptware Engineering: Software Engineering for Prompt-Enabled Systems*](https://arxiv.org/pdf/2503.02400) — requirements, safe failure behavior, versionable prompts, and operational boundaries.
-4. Sahoo et al. (2024), [*A Systematic Survey of Prompt Engineering in Large Language Models*](https://arxiv.org/pdf/2402.07927) — choose techniques for their task-specific function rather than by fashion.
-5. Ye et al. (2024), [*Prompt Engineering a Prompt Engineer*](https://aclanthology.org/2024.findings-acl.21.pdf) — use failed cases and explicit context to diagnose and refine prompts.
-
-Read the exact translations and scope limits in [the evidence map](skills/gop/references/evidence-map.md).
+This does **not** promise universal productivity, correctness, security, fairness, or hallucination elimination. A prompt does not replace real access control, data isolation, secret management, tool authorization, monitoring, or human accountability.
 
 ## Repository map
 
 ```text
 God-Of-Prompt/
 ├── skills/gop/                  # Installable Codex Skill
-│   ├── SKILL.md                 # Prompt-generation behavior
+│   ├── SKILL.md                 # Six-part prompt-generation behavior
 │   ├── agents/openai.yaml       # Codex UI metadata
 │   └── references/evidence-map.md
-├── examples/                    # Input/output examples
-├── .github/ISSUE_TEMPLATE/      # Community reporting template
+├── docs/                        # Architecture and launch materials
+├── examples/                    # Input / prompt / execution examples
 ├── CONTRIBUTING.md
 ├── SECURITY.md
 └── LICENSE
 ```
 
-## Boundaries
-
-- GOP does not guarantee that a model is correct, secure, unbiased, or more productive.
-- GOP shows the generated system prompt but does not expose drafting analysis or hidden reasoning.
-- GOP does not make unauthorized tools, data, or actions safe merely by mentioning them in a prompt.
-- For consequential domains, validate outputs and keep a responsible human in the decision loop.
-
 ## Contributing
 
-Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request. Please support behavioral claims with a reproducible example or a credible source.
+Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request. Support behavioral claims with a reproducible example and keep changes aligned with the architecture and evidence limits.
 
 ## License
 
