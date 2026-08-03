@@ -1,4 +1,4 @@
-# ⚡ God Of Prompt
+# ⚡ God Of Prompt — OpenAI Codex System Prompt Generator
 
 [![Codex Skill](https://img.shields.io/badge/Codex-Skill-000000?logo=openai&logoColor=white)](https://github.com/openai/codex)
 [![License: MIT](https://img.shields.io/badge/License-MIT-f5de53.svg)](LICENSE)
@@ -7,7 +7,7 @@
 
 **Turn a rough requirement into a visible, expert-grade XML system prompt—then execute it immediately.**
 
-God Of Prompt (GOP) is an installable Codex Skill. It uses a practical six-part system-prompt architecture: **Starter → Context → Task → Examples → Output → Repeat**. GOP shows the complete prompt, then applies it in the same response without waiting for approval.
+God Of Prompt (GOP) is an installable **OpenAI Codex Skill**, system-prompt generator, and AI-agent prompt template. It turns a rough product idea, chatbot brief, workflow, tutor, automation, or LLM instruction into a practical six-part system prompt: **Starter → Context → Task → Examples → Output → Repeat**. GOP shows the complete prompt, then applies it in the same response without waiting for approval.
 
 [繁體中文](README.zh-TW.md) · [Quick start](#quick-start) · [Architecture](docs/architecture.md) · [Examples](#examples) · [Launch kit](docs/launch-playbook.md)
 
@@ -27,6 +27,17 @@ Copy-Item -Recurse -Force .\God-Of-Prompt\skills\gop "$env:USERPROFILE\.codex\sk
 ```
 
 Restart Codex if the Skill list does not refresh immediately, then invoke `$gop` followed by the requirement.
+
+## What can I build with this prompt generator?
+
+Use GOP when you need a reusable system prompt for:
+
+- An AI agent, chatbot, customer-support assistant, or internal copilot.
+- An automation workflow that turns notes, documents, or structured input into a defined deliverable.
+- An LLM tutor, coach, analyst, research brief writer, or content workflow.
+- A prompt template with a reliable output schema, source boundary, uncertainty behavior, and safety limits.
+
+It is designed for people searching for a Codex Skill, system prompt template, AI-agent prompt, LLM prompt engineering workflow, or XML prompt structure—not for one-off decorative prompts.
 
 ## The GOP v0.2 prompt architecture
 

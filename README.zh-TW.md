@@ -1,8 +1,8 @@
-# ⚡ God Of Prompt
+# ⚡ God Of Prompt — OpenAI Codex 系統提示詞產生器
 
 **把模糊需求轉成可檢查、可直接貼用的專家級 XML 系統提示詞，接著立即執行。**
 
-God Of Prompt（GOP）是一個可安裝的 Codex Skill。它採用六段式架構：**Starter → Context → Task → Examples → Output → Repeat**。GOP 會先顯示完整提示詞，再於同一則回覆直接執行，不等待確認。
+God Of Prompt（GOP）是一個可安裝的 **OpenAI Codex Skill**、系統提示詞產生器與 AI Agent 提示詞模板。它能把產品構想、聊天機器人需求、工作流程、家教、AI 自動化或 LLM 指令，轉成六段式架構：**Starter → Context → Task → Examples → Output → Repeat**。GOP 會先顯示完整提示詞，再於同一則回覆直接執行，不等待確認。
 
 [English](README.md) · [快速開始](#快速開始) · [架構說明](docs/architecture.md) · [範例](#範例) · [推廣工具包](docs/launch-playbook.md)
 
@@ -22,6 +22,17 @@ Copy-Item -Recurse -Force .\God-Of-Prompt\skills\gop "$env:USERPROFILE\.codex\sk
 ```
 
 重新啟動 Codex（若 Skill 清單尚未更新），然後在需求前加入 `$gop`。
+
+## 這個提示詞產生器能做什麼？
+
+當你需要可重複使用的系統提示詞時使用 GOP：
+
+- AI Agent、聊天機器人、客服助理或內部 Copilot。
+- 把會議記錄、文件或結構化輸入轉成指定交付物的 AI 自動化流程。
+- LLM 家教、教練、分析師、研究摘要或內容工作流程。
+- 有穩定輸出格式、資料來源邊界、不確定性處理與安全限制的提示詞模板。
+
+它適合搜尋 Codex Skill、系統提示詞模板、AI Agent 提示詞、LLM Prompt Engineering 工作流程或 XML Prompt 架構的人；不以堆砌華麗指令的一次性提示詞為目標。
 
 ## GOP v0.2 提示詞架構
 

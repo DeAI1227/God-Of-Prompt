@@ -10,10 +10,12 @@ This repository is ready for a focused main-branch launch. Use the material belo
 
 **Proof path:** Show a real requirement, the generated XML prompt, and the immediate result. Link to a matching example and the evidence limits.
 
+**Search language:** Use accurate phrases people use when looking for this project: OpenAI Codex Skill, system prompt generator, AI-agent prompt, chatbot system prompt, LLM prompt template, prompt engineering workflow, and XML prompt structure. Use them naturally in titles, first paragraphs, examples, and posts; never turn them into unsupported performance claims.
+
 ## GitHub discovery checklist
 
 - Keep the repository description, website, topics, social preview, README, and examples aligned with the current `main` branch.
-- Use topics that reflect genuine search intent: `codex`, `prompt-engineering`, `system-prompts`, `agent-skills`, `ai-agents`, `llm`, and `xml`.
+- Use topics that reflect genuine search intent: `codex`, `openai-codex`, `codex-skill`, `prompt-engineering`, `system-prompts`, `prompt-template`, `agent-skills`, `ai-agents`, `ai-assistant`, `llm`, `large-language-models`, and `xml`.
 - Pin the repository to the maintainer profile and upload the social preview in GitHub repository settings.
 - Enable Discussions and use one welcome post to ask for reproducible prompt failures and example requests.
 
