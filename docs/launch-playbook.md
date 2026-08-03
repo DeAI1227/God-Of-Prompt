@@ -1,6 +1,6 @@
 # God Of Prompt launch playbook
 
-This repository is ready for a focused v0.2 launch. Use the material below without claiming guaranteed model performance.
+This repository is ready for a focused main-branch launch. Use the material below without claiming guaranteed model performance.
 
 ## Positioning
 
@@ -12,15 +12,15 @@ This repository is ready for a focused v0.2 launch. Use the material below witho
 
 ## GitHub discovery checklist
 
-- Keep the repository description, website, topics, social preview, README, release notes, and examples aligned with v0.2.
+- Keep the repository description, website, topics, social preview, README, and examples aligned with the current `main` branch.
 - Use topics that reflect genuine search intent: `codex`, `prompt-engineering`, `system-prompts`, `agent-skills`, `ai-agents`, `llm`, and `xml`.
 - Pin the repository to the maintainer profile and upload the social preview in GitHub repository settings.
 - Enable Discussions and use one welcome post to ask for reproducible prompt failures and example requests.
 
-## Release message
+## Main-branch update message
 
 ```text
-God Of Prompt v0.2.0 is out.
+God Of Prompt's latest version is live on `main`.
 
 GOP now uses a visible six-part XML system-prompt architecture:
 Starter → Context → Task → Examples → Output → Repeat.
@@ -54,7 +54,7 @@ MIT 開源： https://github.com/DeAI1227/God-Of-Prompt
 
 ## Community outreach sequence
 
-1. Publish the GitHub release and the repository Discussion welcome post.
+1. Keep the repository's `main` branch and the Discussion welcome post current.
 2. Share one concise post with a real before/after example on the maintainer's chosen channels.
 3. Ask early users for reproducible failures, not vague praise; turn accepted cases into anonymized examples or regression tests.
 4. Submit only to communities whose posting rules permit project links, with a tailored explanation rather than mass-posting.
